@@ -35,10 +35,19 @@ public class Main {
         transactionThread.setDepositAndPayment(paymentList, deposit);
 
         Thread thread = new Thread(transactionThread);
+        Thread thread1 = new Thread(transactionThread);
+        Thread thread2 = new Thread(transactionThread);
+        Thread thread3 = new Thread(transactionThread);
+
         if (sumAmount < deposit.getAmount()) {
             thread.start();
-
+            thread1.start();
+            thread2.start();
+            thread3.start();
         } else throw new NotFoundException.InsufficientFundsException("balance not enough requirement is:", sumAmount);
 
+        long startTime = System.currentTimeMillis();
+
+        System.out.println(startTime);
     }
 }

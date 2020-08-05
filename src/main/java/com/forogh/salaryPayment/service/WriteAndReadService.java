@@ -18,7 +18,7 @@ public class WriteAndReadService {
 
     final Gson gson = new Gson();
     final String resource = "src/main/resources/";
-    private static final Logger log = Logger.getLogger(Payment.class.getName());
+    private static final Logger log = Logger.getLogger(WriteAndReadService.class.getName());
 
 
     public List<Object> readFile(ModelType modelType) {
