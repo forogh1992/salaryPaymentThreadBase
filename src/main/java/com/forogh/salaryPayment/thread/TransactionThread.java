@@ -19,23 +19,23 @@ public class TransactionThread implements Runnable {
     public void run() {
 
 
-        List<Transaction> transaction = new ArrayList<>();
+        List<Transaction> transactionList = new ArrayList<>();
         TransactionService transactionService = new TransactionService();
         DepositService depositService = new DepositService();
         PaymentService paymentService = new PaymentService();
 
         for (Payment payment : paymentList) {
-            Transaction transactionDTO = new Transaction();
+            Transaction transaction = new Transaction();
 
             long paymentAmount = payment.getAmount();
             long depositAmount = deposit.getAmount();
 
 
-            transactionDTO.setDebtorDepositNum(deposit.getDepositNumber());
-            transactionDTO.setCreditorDepositNum(payment.getDepositNumber());
-            transactionDTO.setAmount(paymentAmount);
-            transactionDTO.setCreditorDepositNum(Integer.parseInt("" + payment.getDepositNumber()));
-            transaction.add(transactionDTO);
+            transaction.setDebtorDepositNum(deposit.getDepositNumber());
+            transaction.setCreditorDepositNum(payment.getDepositNumber());
+            transaction.setAmount(paymentAmount);
+            transaction.setCreditorDepositNum(Integer.parseInt("" + payment.getDepositNumber()));
+            transactionList.add(transaction);
 
             deposit.setAmount(depositAmount - paymentAmount);
             depositService.DepositWrite(deposit);
@@ -44,7 +44,7 @@ public class TransactionThread implements Runnable {
         }
 
         paymentService.WritePayment(paymentList);
-        transactionService.WriteTransaction(transaction);
+        transactionService.WriteTransaction(transactionList);
 
     }
 
