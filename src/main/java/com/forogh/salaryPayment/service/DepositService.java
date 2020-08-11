@@ -18,7 +18,7 @@ public class DepositService {
 
     public void firstCreatingData() {
         Deposit deposit = new Deposit();
-        deposit.setDepositNumber(1111);
+        deposit.setDepositNumber("1.10.100.1");
         deposit.setName("Xbank");
         deposit.setAmount(20000000);
 

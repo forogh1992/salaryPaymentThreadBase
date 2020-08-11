@@ -34,11 +34,11 @@ public class PaymentService {
         paymentList = new ArrayList<>();
 
         try {
-            for (int i = 0; i < paymentCount; i++) {
+            for (int i = 1; i <= paymentCount; i++) {
                 Payment paymentDTO = new Payment();
                 Random rnd = new Random();
                 long amount = rnd.nextInt(200000);
-                paymentDTO.setDepositNumber(i);
+                paymentDTO.setDepositNumber("1.20.100."+i);
                 paymentDTO.setAmount(amount);
                 paymentDTO.setName("employee" + i);
 

@@ -7,6 +7,7 @@ import com.forogh.salaryPayment.service.DepositService;
 import com.forogh.salaryPayment.service.PaymentService;
 import com.forogh.salaryPayment.service.TransactionService;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,10 +35,10 @@ public class TransactionThread implements Runnable {
             transaction.setDebtorDepositNum(deposit.getDepositNumber());
             transaction.setCreditorDepositNum(payment.getDepositNumber());
             transaction.setAmount(paymentAmount);
-            transaction.setCreditorDepositNum(Integer.parseInt("" + payment.getDepositNumber()));
+            transaction.setCreditorDepositNum(("" + payment.getDepositNumber()));
             transactionList.add(transaction);
 
-            deposit.setAmount(depositAmount - paymentAmount);
+            deposit.setAmount(depositAmount- paymentAmount);
             depositService.DepositWrite(deposit);
 
 //                payment.setAmount(0);

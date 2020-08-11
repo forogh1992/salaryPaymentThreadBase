@@ -2,23 +2,23 @@ package com.forogh.salaryPayment.model;
 
 public class Transaction {
 
-    private int debtorDepositNum;
-    private int creditorDepositNum;
+    private String debtorDepositNum;
+    private String creditorDepositNum;
     private long amount;
 
-    public int getDebtorDepositNum() {
+    public String getDebtorDepositNum() {
         return debtorDepositNum;
     }
 
-    public void setDebtorDepositNum(int debtorDepositNum) {
+    public void setDebtorDepositNum(String debtorDepositNum) {
         this.debtorDepositNum = debtorDepositNum;
     }
 
-    public int getCreditorDepositNum() {
+    public String getCreditorDepositNum() {
         return creditorDepositNum;
     }
 
-    public void setCreditorDepositNum(int creditorDepositNum) {
+    public void setCreditorDepositNum(String creditorDepositNum) {
         this.creditorDepositNum = creditorDepositNum;
     }
 

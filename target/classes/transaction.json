@@ -1,1 +1,102 @@
-[{"debtorDepositNum":1111,"creditorDepositNum":0,"amount":104744},{"debtorDepositNum":1111,"creditorDepositNum":1,"amount":29487},{"debtorDepositNum":1111,"creditorDepositNum":2,"amount":193109},{"debtorDepositNum":1111,"creditorDepositNum":3,"amount":86202},{"debtorDepositNum":1111,"creditorDepositNum":4,"amount":18830},{"debtorDepositNum":1111,"creditorDepositNum":5,"amount":24202},{"debtorDepositNum":1111,"creditorDepositNum":6,"amount":41213},{"debtorDepositNum":1111,"creditorDepositNum":7,"amount":15587},{"debtorDepositNum":1111,"creditorDepositNum":8,"amount":193686},{"debtorDepositNum":1111,"creditorDepositNum":9,"amount":173440},{"debtorDepositNum":1111,"creditorDepositNum":10,"amount":127746},{"debtorDepositNum":1111,"creditorDepositNum":11,"amount":93437},{"debtorDepositNum":1111,"creditorDepositNum":12,"amount":37750},{"debtorDepositNum":1111,"creditorDepositNum":13,"amount":117525},{"debtorDepositNum":1111,"creditorDepositNum":14,"amount":76771},{"debtorDepositNum":1111,"creditorDepositNum":15,"amount":193979},{"debtorDepositNum":1111,"creditorDepositNum":16,"amount":40819},{"debtorDepositNum":1111,"creditorDepositNum":17,"amount":102550},{"debtorDepositNum":1111,"creditorDepositNum":18,"amount":192251},{"debtorDepositNum":1111,"creditorDepositNum":19,"amount":197617}]
+[
+  {
+    "debtorDepositNum": "1.10.100.1",
+    "creditorDepositNum": "1.20.100.1",
+    "amount": 97485
+  },
+  {
+    "debtorDepositNum": "1.10.100.1",
+    "creditorDepositNum": "1.20.100.2",
+    "amount": 105512
+  },
+  {
+    "debtorDepositNum": "1.10.100.1",
+    "creditorDepositNum": "1.20.100.3",
+    "amount": 106129
+  },
+  {
+    "debtorDepositNum": "1.10.100.1",
+    "creditorDepositNum": "1.20.100.4",
+    "amount": 11961
+  },
+  {
+    "debtorDepositNum": "1.10.100.1",
+    "creditorDepositNum": "1.20.100.5",
+    "amount": 29130
+  },
+  {
+    "debtorDepositNum": "1.10.100.1",
+    "creditorDepositNum": "1.20.100.6",
+    "amount": 169274
+  },
+  {
+    "debtorDepositNum": "1.10.100.1",
+    "creditorDepositNum": "1.20.100.7",
+    "amount": 139888
+  },
+  {
+    "debtorDepositNum": "1.10.100.1",
+    "creditorDepositNum": "1.20.100.8",
+    "amount": 109765
+  },
+  {
+    "debtorDepositNum": "1.10.100.1",
+    "creditorDepositNum": "1.20.100.9",
+    "amount": 72357
+  },
+  {
+    "debtorDepositNum": "1.10.100.1",
+    "creditorDepositNum": "1.20.100.10",
+    "amount": 12299
+  },
+  {
+    "debtorDepositNum": "1.10.100.1",
+    "creditorDepositNum": "1.20.100.11",
+    "amount": 130161
+  },
+  {
+    "debtorDepositNum": "1.10.100.1",
+    "creditorDepositNum": "1.20.100.12",
+    "amount": 114341
+  },
+  {
+    "debtorDepositNum": "1.10.100.1",
+    "creditorDepositNum": "1.20.100.13",
+    "amount": 131768
+  },
+  {
+    "debtorDepositNum": "1.10.100.1",
+    "creditorDepositNum": "1.20.100.14",
+    "amount": 24645
+  },
+  {
+    "debtorDepositNum": "1.10.100.1",
+    "creditorDepositNum": "1.20.100.15",
+    "amount": 195019
+  },
+  {
+    "debtorDepositNum": "1.10.100.1",
+    "creditorDepositNum": "1.20.100.16",
+    "amount": 150359
+  },
+  {
+    "debtorDepositNum": "1.10.100.1",
+    "creditorDepositNum": "1.20.100.17",
+    "amount": 183683
+  },
+  {
+    "debtorDepositNum": "1.10.100.1",
+    "creditorDepositNum": "1.20.100.18",
+    "amount": 171225
+  },
+  {
+    "debtorDepositNum": "1.10.100.1",
+    "creditorDepositNum": "1.20.100.19",
+    "amount": 161328
+  },
+  {
+    "debtorDepositNum": "1.10.100.1",
+    "creditorDepositNum": "1.20.100.20",
+    "amount": 179877
+  }
+]

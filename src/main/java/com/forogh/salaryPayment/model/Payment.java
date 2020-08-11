@@ -2,15 +2,15 @@ package com.forogh.salaryPayment.model;
 
 public class Payment {
 
-    private int depositNumber;
+    private String depositNumber;
     private long amount;
     private String name;
 
-    public int getDepositNumber() {
+    public String getDepositNumber() {
         return depositNumber;
     }
 
-    public void setDepositNumber(int depositNumber) {
+    public void setDepositNumber(String depositNumber) {
         this.depositNumber = depositNumber;
     }
 

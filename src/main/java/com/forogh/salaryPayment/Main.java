@@ -8,6 +8,8 @@ import com.forogh.salaryPayment.service.PaymentService;
 import com.forogh.salaryPayment.thread.TransactionThread;
 
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Main {
 
@@ -30,24 +32,16 @@ public class Main {
         for (Payment payments : paymentList) {
             sumAmount += payments.getAmount();
         }
-
+        ExecutorService executorService = Executors.newFixedThreadPool(1);
         TransactionThread transactionThread = new TransactionThread();
         transactionThread.setDepositAndPayment(paymentList, deposit);
 
-        Thread thread = new Thread(transactionThread);
-        Thread thread1 = new Thread(transactionThread);
-        Thread thread2 = new Thread(transactionThread);
-        Thread thread3 = new Thread(transactionThread);
-
         if (sumAmount < deposit.getAmount()) {
-            thread.start();
-            thread1.start();
-            thread2.start();
-            thread3.start();
-        } else throw new NotFoundException.InsufficientFundsException("balance not enough requirement is:", sumAmount);
+            executorService.execute(transactionThread);
+            executorService.shutdown();
+        } else throw new NotFoundException("balance not enough requirement is:"+ sumAmount);
 
         long startTime = System.currentTimeMillis();
-
         System.out.println(startTime);
     }
 }
