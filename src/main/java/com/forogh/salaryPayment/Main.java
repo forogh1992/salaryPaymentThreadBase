@@ -6,6 +6,7 @@ import com.forogh.salaryPayment.model.Payment;
 import com.forogh.salaryPayment.service.DepositService;
 import com.forogh.salaryPayment.service.PaymentService;
 import com.forogh.salaryPayment.thread.TransactionThread;
+import org.apache.log4j.BasicConfigurator;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -14,7 +15,7 @@ import java.util.concurrent.Executors;
 public class Main {
 
     public static void main(String[] args) throws NotFoundException.InsufficientFundsException {
-
+        BasicConfigurator.configure();
         List<Payment> paymentList;
 
         DepositService depositService = new DepositService();
@@ -41,7 +42,6 @@ public class Main {
             executorService.shutdown();
         } else throw new NotFoundException("balance not enough requirement is:"+ sumAmount);
 
-        long startTime = System.currentTimeMillis();
-        System.out.println(startTime);
+
     }
 }

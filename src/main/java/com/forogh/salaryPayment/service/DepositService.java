@@ -16,16 +16,16 @@ public class DepositService {
     private List<Deposit> deposits;
 
 
-    public void firstCreatingData() {
+    public synchronized void firstCreatingData() {
         Deposit deposit = new Deposit();
         deposit.setDepositNumber("1.10.100.1");
         deposit.setName("Xbank");
-        deposit.setAmount(20000000);
+        deposit.setAmount(200000000);
 
         writeAndRead.writeOnFile(gson.toJson(deposit), ModelType.DEPOSIT);
     }
 
-    public void DepositWrite(Deposit deposit) {
+    public synchronized void DepositWrite(Deposit deposit) {
         writeAndRead.writeOnFile(gson.toJson(deposit), ModelType.DEPOSIT);
     }
 
@@ -40,7 +40,7 @@ public class DepositService {
             for (Object obj : genericList) {
                 deposit = ((Deposit) obj);
             }
-//
+
         } catch (Exception ex) {
             log.error(ex.getMessage());
             ex.printStackTrace();

@@ -12,7 +12,7 @@ import java.util.Random;
 
 public class PaymentService {
 
-    private final int paymentCount = 20;
+    private final int paymentCount = 1000;
     private WriteAndReadService writeAndReadService = new WriteAndReadService();
     private static final Logger log = Logger.getLogger(Payment.class.getName());
     private List<Payment> paymentList;
@@ -37,7 +37,7 @@ public class PaymentService {
             for (int i = 1; i <= paymentCount; i++) {
                 Payment paymentDTO = new Payment();
                 Random rnd = new Random();
-                long amount = rnd.nextInt(200000);
+                long amount = rnd.nextInt(20000);
                 paymentDTO.setDepositNumber("1.20.100."+i);
                 paymentDTO.setAmount(amount);
                 paymentDTO.setName("employee" + i);

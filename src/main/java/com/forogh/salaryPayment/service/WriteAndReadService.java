@@ -11,10 +11,12 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 
 public class WriteAndReadService {
+
 
     final Gson gson = new Gson();
     final String resource = "src/main/resources/";
@@ -30,11 +32,7 @@ public class WriteAndReadService {
             List<String> contents = Files.readAllLines(path);
             for (String content : contents)
                 deposit.append(content);
-/*
-            if (modelType==ModelType.DEPOSIT){
-                Deposit depositJ = gson.fromJson(deposit.toString(), Deposit.class);
-                   fileValues.add(depositJ);
-            } else System.out.println("not found");*/
+
 
 
             switch (modelType) {
