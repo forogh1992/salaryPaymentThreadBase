@@ -1,6 +1,8 @@
 package com.forogh.salaryPayment.model;
 
-public class Deposit {
+import java.io.Serializable;
+
+public class Deposit implements Serializable {
     private String depositNumber;
     private long amount;
     private String name;

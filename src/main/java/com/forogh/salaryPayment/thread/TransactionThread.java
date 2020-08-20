@@ -38,8 +38,9 @@ public class TransactionThread implements Runnable {
             transaction.setCreditorDepositNum(("" + payment.getDepositNumber()));
             transactionList.add(transaction);
 
-            deposit.setAmount(depositAmount- paymentAmount);
-            depositService.DepositWrite(deposit);
+
+                deposit.setAmount(depositAmount - paymentAmount);
+                depositService.DepositWrite(deposit);
 
 //                payment.setAmount(0);
         }

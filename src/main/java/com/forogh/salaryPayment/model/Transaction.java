@@ -1,6 +1,8 @@
 package com.forogh.salaryPayment.model;
 
-public class Transaction {
+import java.io.Serializable;
+
+public class Transaction implements Serializable {
 
     private String debtorDepositNum;
     private String creditorDepositNum;

@@ -15,11 +15,9 @@ public class TransactionService {
     private static final Logger log = Logger.getLogger(Payment.class.getName());
     private List<Transaction> paymentList;
 
-    final Gson gson = new Gson();
-
-    public void WriteTransaction(List<Transaction> TransactionList) {
+    public void WriteTransaction(List<Transaction> transactionList) {
         try {
-            writeAndReadService.writeOnFile(gson.toJson(TransactionList), ModelType.TRANSACTION);
+            writeAndReadService.writeOnFile(transactionList, ModelType.TRANSACTION);
         } catch (Exception ex) {
             log.error(ex.getMessage());
             ex.printStackTrace();

@@ -10,42 +10,28 @@ import java.util.List;
 
 public class DepositService {
 
-    final Gson gson = new Gson();
+
+
     private WriteAndReadService writeAndRead = new WriteAndReadService();
     private static final Logger log = Logger.getLogger(Deposit.class.getName());
-    private List<Deposit> deposits;
-
+    private Deposit deposit;
 
     public synchronized void firstCreatingData() {
         Deposit deposit = new Deposit();
         deposit.setDepositNumber("1.10.100.1");
         deposit.setName("Xbank");
-        deposit.setAmount(200000000);
+        deposit.setAmount(2000000000);
 
-        writeAndRead.writeOnFile(gson.toJson(deposit), ModelType.DEPOSIT);
+        writeAndRead.writeOnFile(deposit, ModelType.DEPOSIT);
     }
 
     public synchronized void DepositWrite(Deposit deposit) {
-        writeAndRead.writeOnFile(gson.toJson(deposit), ModelType.DEPOSIT);
+        writeAndRead.writeOnFile(deposit, ModelType.DEPOSIT);
     }
 
 
-    public Deposit getDeposit() {
-        List<Object> genericList;
-        Deposit deposit = new Deposit();
-
-        try {
-            genericList = writeAndRead.readFile(ModelType.DEPOSIT);
-
-            for (Object obj : genericList) {
-                deposit = ((Deposit) obj);
-            }
-
-        } catch (Exception ex) {
-            log.error(ex.getMessage());
-            ex.printStackTrace();
-        }
+    public Deposit getDeposit() throws ClassNotFoundException {
+        deposit = (Deposit) writeAndRead.readFile(ModelType.DEPOSIT);
         return deposit;
     }
-
 }

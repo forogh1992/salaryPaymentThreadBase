@@ -12,12 +12,11 @@ import java.util.Random;
 
 public class PaymentService {
 
-    private final int paymentCount = 1000;
+    private final int paymentCount = 100;
     private WriteAndReadService writeAndReadService = new WriteAndReadService();
     private static final Logger log = Logger.getLogger(Payment.class.getName());
     private List<Payment> paymentList;
 
-    final Gson gson = new Gson();
 
     public void firstCreatingData() {
         paymentList = new ArrayList<>();
@@ -25,7 +24,7 @@ public class PaymentService {
         payment.setName("");
 
         paymentList.add(payment);
-        writeAndReadService.writeOnFile(gson.toJson(paymentList), ModelType.PAYMENT);
+        writeAndReadService.writeOnFile(paymentList, ModelType.PAYMENT);
 
         setInitCreditor();
     }
@@ -37,14 +36,14 @@ public class PaymentService {
             for (int i = 1; i <= paymentCount; i++) {
                 Payment paymentDTO = new Payment();
                 Random rnd = new Random();
-                long amount = rnd.nextInt(20000);
+                long amount = rnd.nextInt(200000);
                 paymentDTO.setDepositNumber("1.20.100."+i);
                 paymentDTO.setAmount(amount);
                 paymentDTO.setName("employee" + i);
 
                 paymentList.add(paymentDTO);
             }
-            writeAndReadService.writeOnFile(gson.toJson(paymentList), ModelType.PAYMENT);
+            writeAndReadService.writeOnFile(paymentList, ModelType.PAYMENT);
         } catch (Exception ex) {
             log.error(ex.getMessage());
             ex.printStackTrace();
@@ -53,7 +52,7 @@ public class PaymentService {
 
     public void WritePayment(List<Payment> paymentDTOList) {
         try {
-            writeAndReadService.writeOnFile(gson.toJson(paymentDTOList), ModelType.PAYMENT);
+            writeAndReadService.writeOnFile(paymentList, ModelType.PAYMENT);
         } catch (Exception ex) {
             log.error(ex.getMessage());
             ex.printStackTrace();
@@ -62,17 +61,8 @@ public class PaymentService {
 
 
     public List<Payment> getAllCreditorAccount() {
-        List<Object> genericList;
-
         try {
-            genericList = writeAndReadService.readFile(ModelType.PAYMENT);
-
-            for (Object obj : genericList) { //cast reading json object to my object(payment)
-                Payment payment;
-                payment = ((Payment) obj);
-                paymentList.add(payment);
-            }
-
+            paymentList = (List<Payment>) writeAndReadService.readFile(ModelType.PAYMENT);
         } catch (Exception ex) {
             log.error(ex.getMessage());
             ex.printStackTrace();
